@@ -1,0 +1,18 @@
+@import '../../styles/propertySets.css';
+
+
+.root {
+    background-color: #f9f9f9;
+    border-right: 2px solid rgba(0, 0, 0, 0.25);
+    padding: 0 5px;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+    min-width: 360px;
+  
+    a {
+      text-decoration: none;
+    }
+  
+  }
+  

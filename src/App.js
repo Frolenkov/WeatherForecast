@@ -1,7 +1,8 @@
 import './App.scss';
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 import history from "./history";
-import NotFound from "./pages/NotFound";
+import NotFound from "./containers/NotFound";
+import WelcomePage from "./containers/WelcomePage";
 import CSideBar from './layouts/SideBar';
 import CCityInfo from "./layouts/CityInfo";
 import CSearch from "./layouts/Search";
@@ -16,7 +17,8 @@ function App() {
          <CSideBar/>
           <Switch>
              <Route path="/search" component = {CSearch} />
-             <Route path="/:city" component = { CCityInfo}/>             
+             <Route path="/:city" component = { CCityInfo}/>
+             <Route path="/" component = { WelcomePage }/>             
              <Route component = { NotFound } />            
            </Switch>
        </div>

@@ -1,0 +1,18 @@
+@import '../../styles/propertySets.css';
+
+
+.root {
+    padding: 25px;
+    width: 500px;
+  
+    & .city {
+      width: 100%;
+      margin-bottom: 25px;
+    }
+  
+    & .country {
+      margin-bottom: 25px;
+    }
+  }
+  
+  
