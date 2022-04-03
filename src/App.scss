@@ -1,1 +1,51 @@
-
+#root {
+    background-color: rgb(222, 239, 246);
+    font-family: sans-serif;
+    display: flex;
+    flex-wrap: wrap;
+    height: 100%;
+    overflow: hidden;
+  }
+  
+  .mainWrapper {
+    max-width: 1250px;
+    margin: 0 auto;
+    display: flex;
+    flex: 1 0 auto;
+    height: 100%;
+    width: 100%;
+    padding-top: 50px;
+  }
+  
+  @media screen and (max-width: 800px) {
+    .mainWrapper {
+      flex-direction: column;
+    }
+  }
+  
+  .circle {
+    position: fixed;
+    transform: translate(-50%, -50%);
+    top: 0;
+    left: 0;
+    opacity: 0.3;
+    background-color: var(--mainColor);
+    border-radius: 50%;
+    pointer-events: none;
+  }
+  
+  .circle.sm {
+    width: 10px;
+    height: 10px;
+  }
+  
+  .circle.md {
+    width: 30px;
+    height: 30px;
+  }
+  
+  .circle.lg {
+    width: 50px;
+    height: 50px;
+  }
+  

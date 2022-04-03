@@ -1,18 +1,17 @@
 .root {
-    background-color: var(--mainColorLightest);
-    border-right: 2px solid var(--matterColorAnti);
-    padding: 5px;
-    display: flex;
-    flex-direction: column;
-    overflow-y: auto;
-    min-width: 360px;
-    box-shadow: var(--boxShadow)
+  background-color: var(--mainColorLightest);
+  border-right: 2px solid var(--matterColorAnti);
+  padding: 5px;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  min-width: 360px;
+  box-shadow: var(--boxShadow);
 }
 
 .linkText {
   margin-left: 8px;
 }
-  
 
 .home {
   font-size: 20px;

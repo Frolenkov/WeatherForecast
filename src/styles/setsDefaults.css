@@ -35,15 +35,6 @@
 
   --transitionStyle: ease-in 0.3s;
   --transitionStyleButton: ease-in-out 0.1s;
-
-  /* ================ Media ================ */
-
-  --viewportSmall: (min-width: 550px);
-  --viewportMedium: (min-width: 768px);
-  --viewportLarge: (min-width: 1024px);
-  --viewportLargeWithPaddings: (min-width: 1128px);
-  --viewportLargeWithPaddingsSearch: (min-width: 1268px);
-  --viewportXLarge: (min-width: 1921px);
 }
 
 /* ================ Global element styles ================ */
@@ -119,48 +110,3 @@ a {
   text-decoration: none;
 }
 
-#root {
-  background-color: rgb(222, 239, 246);
-  font-family: sans-serif;
-  display: flex;
-  flex-wrap: wrap;
-  height: 100%;
-  overflow: hidden;
-}
-
-.mainWrapper {
-  max-width: 1250px;
-  margin: 0 auto;
-  display: flex;
-  flex: 1 0 auto;
-  height: 100%;
-  width: 100%;
-  padding-top: 50px;
-}
-
-
-.circle {
-  position: fixed;
-  transform: translate(-50%, -50%);
-  top: 0;
-  left: 0;
-  opacity: 0.3;
-  background-color: var(--mainColor);
-  border-radius: 50%;
-  pointer-events: none;
-}
-
-.circle.sm {
-  width: 10px;
-  height: 10px;
-}
-
-.circle.md {
-  width: 30px;
-  height: 30px;
-}
-
-.circle.lg {
-  width: 50px;
-  height: 50px;
-}

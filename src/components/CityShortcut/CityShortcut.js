@@ -38,12 +38,8 @@ const CityShortcutComponent = ({
           />
         </div>
         <div className={classNames(css.header, css.flex)}>
-          <span className={css.type}>
-            Weather is {weather[0].main}
-          </span>
-          <span className={css.temp}>
-            Temp: {main.temp}
-          </span>
+          <span className={css.type}>Weather is {weather[0].main}</span>
+          <span className={css.temp}>Temp: {main.temp}</span>
         </div>
       </div>
     </Link>

@@ -1,10 +1,9 @@
 import history from "../../history";
-import classNames from 'classnames';
+import classNames from "classnames";
 
-import css from './NotFound.module.css';
+import css from "./NotFound.module.css";
 
-const NotFound = ({rootClassName, className}) => {
-
+const NotFound = ({ rootClassName, className }) => {
   setTimeout(() => {
     history.push("/");
   }, 5000);
@@ -12,7 +11,7 @@ const NotFound = ({rootClassName, className}) => {
   const rootClass = rootClassName || css.root;
   const classes = classNames(rootClass, className);
   return (
-    <div className={classes}>      
+    <div className={classes}>
       <b>404</b>
       <span>Sorry, please try another way</span>
     </div>

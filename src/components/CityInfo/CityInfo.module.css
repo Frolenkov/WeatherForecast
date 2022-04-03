@@ -1,28 +1,27 @@
 .root {
-    padding: 25px;
-    background-color: var(--matterColorLight);
-    display: flex;
-    flex-wrap: wrap;
-    box-shadow: var(--boxShadow)
+  padding: 25px;
+  background-color: var(--matterColorLight);
+  display: flex;
+  flex-wrap: wrap;
+  box-shadow: var(--boxShadow);
 }
 
-  .name {
-    margin-bottom: 15px;
-  }
+.name {
+  margin-bottom: 15px;
+}
 
-  .item {
+.item {
+}
 
-  }
+.md {
+  width: 50%;
+}
 
-  .md {
-    width: 50%;
-  }
+.xl {
+  width: 100%;
+}
 
-  .xl {
-    width: 100%;
-  }
-
-  .bold {
-    font-weight: var(--fontWeightBold);
-    font-size: 15px;
-  }
+.bold {
+  font-weight: var(--fontWeightBold);
+  font-size: 15px;
+}

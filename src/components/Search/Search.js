@@ -15,7 +15,7 @@ const SearchComponent = ({
   addCity,
   rootClassName,
   className,
-  requestError
+  requestError,
 }) => {
   const [currentCity, setCurrentCity] = useState("");
   const [currentCountry, setCurrentCountry] = useState("");
@@ -26,7 +26,7 @@ const SearchComponent = ({
 
   const rootClass = rootClassName || css.root;
   const classes = classNames(rootClass, className);
- 
+
   return (
     <div className={classes}>
       <TextField
@@ -50,9 +50,7 @@ const SearchComponent = ({
         Add city
       </Button>
 
-      <div className="requestError">
-        {requestError}
-      </div>
+      <div className="requestError">{requestError}</div>
     </div>
   );
 };

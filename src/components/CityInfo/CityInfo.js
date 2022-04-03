@@ -6,7 +6,7 @@ import classNames from "classnames";
 
 import css from "./CityInfo.module.css";
 
-const  CityInfoComponent = ({
+const CityInfoComponent = ({
   rootClassName,
   className,
   match: {
@@ -14,26 +14,21 @@ const  CityInfoComponent = ({
   },
   cityInfoObj = {},
 }) => {
-
-  
- 
   const rootClass = rootClassName || css.root;
   const classes = classNames(rootClass, className);
 
   const cityInfo = cityInfoObj[city] || {};
 
   if (Object.keys(cityInfo).length === 0) {
-   return <Redirect to="/" />
+    return <Redirect to="/" />;
   }
 
-  console.log(cityInfo, Object.keys(cityInfo).length === 0)
+  console.log(cityInfo, Object.keys(cityInfo).length === 0);
 
   return (
     <div className={classes}>
-      <h1 className={classNames(css.name, css.xl)}>
-        {cityInfo?.name}
-      </h1>
-      <span className={classNames(css.item, css.xl, css.bold)} >
+      <h1 className={classNames(css.name, css.xl)}>{cityInfo?.name}</h1>
+      <span className={classNames(css.item, css.xl, css.bold)}>
         Weather is :{" "}
         {cityInfo?.weather[0].description
           ? cityInfo?.weather[0].description
@@ -53,13 +48,13 @@ const  CityInfoComponent = ({
       </span>
       <span className={classNames(css.item, css.md)}>
         Temperature : {cityInfo?.main?.temp}
-      </span> 
+      </span>
       <span classNames={(css.item, css.md)}>
         Feels like : {cityInfo?.main?.feels_like}
       </span>
     </div>
   );
-}
+};
 
 const CityInfo = connect(
   (s) => ({

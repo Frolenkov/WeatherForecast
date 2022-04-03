@@ -15,7 +15,9 @@ const SideBarComponent = ({ rootClassName, className, citiesToShow = {} }) => {
 
   return (
     <div className={classes}>
-      <Link className={css.home} to="/">Home</Link>
+      <Link className={css.home} to="/">
+        Home
+      </Link>
       {citiesToShowArr.map((city) => (
         <CityShortcut key={city.id} {...city} />
       ))}
