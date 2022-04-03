@@ -26,7 +26,7 @@ const SearchComponent = ({
 
   const rootClass = rootClassName || css.root;
   const classes = classNames(rootClass, className);
-
+ 
   return (
     <div className={classes}>
       <TextField
