@@ -1,26 +1,28 @@
-@import '../../styles/propertySets.css';
-
 .root {
     padding: 25px;
-    background-color: #fff;
+    background-color: var(--matterColorLight);
+    display: flex;
     flex-wrap: wrap;
-    & .name {
-      margin-bottom: 15px;
-    }
-  
-    & .item {
-  
-      &.md {
-        width: 50%;
-      }
-  
-      &.xl {
-        width: 100%;
-      }
-  
-      &.bold {
-        font-weight: 700;
-        font-size: 15px;
-      }
-    }
+    box-shadow: var(--boxShadow)
+}
+
+  .name {
+    margin-bottom: 15px;
+  }
+
+  .item {
+
+  }
+
+  .md {
+    width: 50%;
+  }
+
+  .xl {
+    width: 100%;
+  }
+
+  .bold {
+    font-weight: var(--fontWeightBold);
+    font-size: 15px;
   }

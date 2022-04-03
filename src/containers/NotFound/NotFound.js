@@ -1,4 +1,4 @@
-import history from "../history";
+import history from "../../history";
 import classNames from 'classnames';
 
 import css from './NotFound.module.css';

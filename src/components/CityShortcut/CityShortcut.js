@@ -1,11 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { actionDeleteCity, actionGetCity } from "../store/actions";
+import { actionDeleteCity, actionGetCity } from "../../store/actions";
 import CloseIcon from "@material-ui/icons/Close";
 import { connect } from "react-redux";
 import classNames from "classnames";
 
-import css from "./NotFound.module.css";
+import css from "./CityShortcut.module.css";
 
 const CityShortcutComponent = ({
   rootClassName,
@@ -22,7 +22,7 @@ const CityShortcutComponent = ({
 
   return (
     <Link
-      to={`/${name}`}
+      to={`/city/${name}`}
       className={classes}
       onClick={() => getCitiesToShow(name)}
     >

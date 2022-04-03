@@ -1,20 +1,18 @@
-@import '../sanitize.css';
-@import './customMediaQueries.css';
-@import './propertySets.css';
-
+@import "../assets/sanitize.css";
 
 :root {
   /* ================ Colors ================ */
 
   --mainColor: #3083f6;
-  --mainColorLight: #80b2f8;
+  --mainColorLight: #c9dbf4;
   --mainColorDark: #123d7b;
 
   --matterColorDark: #000;
   --matterColorLight: #fff;
 
-  --matterColorAnti: rgb(142, 141, 141);
+  --mainColorLightest: #ecf3fd;
 
+  --matterColorAnti: rgb(142, 141, 141);
 
   --fontWeightRegular: 400;
   --fontWeightMedium: 500;
@@ -23,34 +21,37 @@
 
   --font-family: sans-serif;
 
-   /* Shadows */
-   --boxShadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1);
-   --boxShadowTop: 0 -2px 4px 0 rgba(0, 0, 0, 0.1);
-   --boxShadowLight: 0 2px 4px 0 rgba(0, 0, 0, 0.05);
-   --boxShadowPopup: 0 8px 16px 0 rgba(0, 0, 0, 0.3);
-   --boxShadowPopupLight: 0 3px 6px 0 rgba(0, 0, 0, 0.2);
-   --boxShadowBreakdown: 0 3px 6px 0 rgba(0, 0, 0, 0.2);
-   --boxShadowButton: 0 4px 8px 0 rgba(0, 0, 0, 0.1);
-   --boxShadowListingCard: 0 0 50px 0 rgba(0, 0, 0, 0.1);
-   --boxShadowNotFoundPageSearch: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
-   --boxShadowSectionLocationHover: 0 10px 30px 0 rgba(0, 0, 0, 0.1);
-   --boxShadowBottomForm: 0 -2px 4px 0 rgba(0, 0, 0, 0.05);
-   --boxShadowFilterButton: 0 4px 16px 0 rgba(0, 0, 0, 0.2);
-   --boxShadowBig: 0 2px 20px 0 rgba(0, 0, 0, 0.15);
+  /* Shadows */
+  --boxShadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1);
+  --boxShadowTop: 0 -2px 4px 0 rgba(0, 0, 0, 0.1);
+  --boxShadowLight: 0 2px 4px 0 rgba(0, 0, 0, 0.05);
+  --boxShadowPopup: 0 8px 16px 0 rgba(0, 0, 0, 0.3);
+  --boxShadowPopupLight: 0 3px 6px 0 rgba(0, 0, 0, 0.2);
+  --boxShadowBreakdown: 0 3px 6px 0 rgba(0, 0, 0, 0.2);
+  --boxShadowButton: 0 4px 8px 0 rgba(0, 0, 0, 0.1);
+  --boxShadowBig: 0 2px 20px 0 rgba(0, 0, 0, 0.15);
 
   /* ================ Transition styles ================ */
 
   --transitionStyle: ease-in 0.3s;
   --transitionStyleButton: ease-in-out 0.1s;
 
+  /* ================ Media ================ */
+
+  --viewportSmall: (min-width: 550px);
+  --viewportMedium: (min-width: 768px);
+  --viewportLarge: (min-width: 1024px);
+  --viewportLargeWithPaddings: (min-width: 1128px);
+  --viewportLargeWithPaddingsSearch: (min-width: 1268px);
+  --viewportXLarge: (min-width: 1921px);
 }
 
 /* ================ Global element styles ================ */
 
 body {
   font-family: sans-serif;
-  -webkit-font-smoothing: antialiased; /* http://szafranek.net/blog/2009/02/22/font-smoothing-explained/ */
-  -moz-osx-font-smoothing: grayscale; /* http://szafranek.net/blog/2009/02/22/font-smoothing-explained/ */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeSpeed;
   color: var(--matterColorDark);
   background-color: var(--matterColorLight);
@@ -66,47 +67,32 @@ body {
   color: var(--matterColorLight);
 }
 
-a {
-  @apply --defaultLinkStyles;
-}
-
-h1 {
-  @apply --defaultH1FontStyles;
-}
-h2 {
-  @apply --defaultH2FontStyles;
-}
-h3 {
-  @apply --defaultH3FontStyles;
-}
-h4 {
-  @apply --defaultH4FontStyles;
-}
-h5 {
-  @apply --defaultH5FontStyles;
-}
-h6 {
-  @apply --defaultH6FontStyles;
-}
-
-input,
-textarea,
-select,
-li {
-  @apply --defaultDefaultFontStyles;
-  line-height: 32px;
-}
-
-p,
-pre {
-  @apply --defaultBodyFontStyles;
+.flex {
+  display: flex;
+  justify-content: space-between;
 }
 
 /* ================ Normalisations ================ */
 
+html,
+body {
+  height: 100%;
+}
+
+
 html {
-  @apply --defaultDefaultFontStyles;
-  color: var(--matterColor);
+  font-family: var(--fontFamily);
+  font-weight: var(--fontWeightMedium);
+  font-size: 14px;
+  line-height: 24px;
+  letter-spacing: -0.1px;
+  /* No margins for default font */
+
+  @media (--viewportMedium) {
+    font-size: 16px;
+    line-height: 32px;
+  }
+
   padding: 0;
   margin: 0;
 }
@@ -118,44 +104,63 @@ ul {
 
 legend,
 label {
-  @apply --defaultH5FontStyles;
   display: block;
   margin-top: 0;
   margin-bottom: 0;
 
-@media (--viewportMedium) {
-  margin-top: 0;
-  margin-bottom: 0;
-  /*padding-top: 6px;*/
-  padding-bottom: 2px;
-}
-}
-
-button {
-  font-family: var(--font-family);
+  @media (--viewportMedium) {
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-bottom: 2px;
+  }
 }
 
-select {
-  @apply --defaultSelectStyles;
+a {
+  text-decoration: none;
 }
 
-input {
-  @apply --defaultInputStyles;
+#root {
+  background-color: rgb(222, 239, 246);
+  font-family: sans-serif;
+  display: flex;
+  flex-wrap: wrap;
+  height: 100%;
+  overflow: hidden;
 }
 
-textarea {
-  @apply --defaultInputStyles;
-
-  /* Todo: All textareas are using auto-sizing extension which currently calculates required space incorrectly when box-sixing is "border-box" */
-  box-sizing: content-box;
-  padding: 0 0 10px 0;
-
-&::placeholder {
-   padding: 0 0 10px 0;
- }
-
-@media (--viewportMedium) {
-  padding: 4px 0 10px 0;
-}
+.mainWrapper {
+  max-width: 1250px;
+  margin: 0 auto;
+  display: flex;
+  flex: 1 0 auto;
+  height: 100%;
+  width: 100%;
+  padding-top: 50px;
 }
 
+
+.circle {
+  position: fixed;
+  transform: translate(-50%, -50%);
+  top: 0;
+  left: 0;
+  opacity: 0.3;
+  background-color: var(--mainColor);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.circle.sm {
+  width: 10px;
+  height: 10px;
+}
+
+.circle.md {
+  width: 30px;
+  height: 30px;
+}
+
+.circle.lg {
+  width: 50px;
+  height: 50px;
+}

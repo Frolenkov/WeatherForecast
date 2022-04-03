@@ -1,12 +1,12 @@
 import { connect } from "react-redux";
 import { useState } from "react";
-import { actionGetCity } from "../store/actions";
+import { actionGetCity } from "../../store/actions";
 import { TextField, Button } from "@material-ui/core";
 import Select from "react-select";
 import countryList from "react-select-country-list";
 import classNames from "classnames";
 
-import css from "./NotFound.module.css";
+import css from "./Search.module.css";
 
 const SearchComponent = ({
   match: {
@@ -15,6 +15,7 @@ const SearchComponent = ({
   addCity,
   rootClassName,
   className,
+  requestError
 }) => {
   const [currentCity, setCurrentCity] = useState("");
   const [currentCountry, setCurrentCountry] = useState("");
@@ -48,13 +49,17 @@ const SearchComponent = ({
       >
         Add city
       </Button>
+
+      <div className="requestError">
+        {requestError}
+      </div>
     </div>
   );
 };
 
 const Search = connect(
   (s) => ({
-    cityInfo: s.promise?.actionGetCity?.payload?.data?.getCityInfo,
+    requestError: s.promise?.getCityInfo?.payload?.message,
   }),
   {
     addCity: actionGetCity,
