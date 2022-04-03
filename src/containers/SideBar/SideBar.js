@@ -21,7 +21,7 @@ const SideBarComponent = ({ rootClassName, className, citiesToShow = {} }) => {
       {citiesToShowArr.map((city) => (
         <CityShortcut key={city.id} {...city} />
       ))}
-      <Link to="/search">
+      <Link className={css.add} to="/search">
         <Fab color="primary" aria-label="add">
           <PlusOneIcon />
         </Fab>

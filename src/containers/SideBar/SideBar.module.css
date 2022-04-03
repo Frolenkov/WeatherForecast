@@ -1,7 +1,7 @@
 .root {
   background-color: var(--mainColorLightest);
   border-right: 2px solid var(--matterColorAnti);
-  padding: 5px;
+  padding: 12px;
   display: flex;
   flex-direction: column;
   overflow-y: auto;
@@ -16,4 +16,8 @@
 .home {
   font-size: 20px;
   margin-bottom: 12px;
+}
+
+.add {
+  margin-top: 12px;
 }
